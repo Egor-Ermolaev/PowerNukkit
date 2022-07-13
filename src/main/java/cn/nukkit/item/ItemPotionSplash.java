@@ -2,6 +2,7 @@ package cn.nukkit.item;
 
 import cn.nukkit.api.PowerNukkitOnly;
 import cn.nukkit.api.Since;
+import cn.nukkit.entity.item.EntityPotion;
 import cn.nukkit.nbt.tag.CompoundTag;
 import cn.nukkit.potion.Potion;
 
@@ -12,7 +13,7 @@ import cn.nukkit.potion.Potion;
 public class ItemPotionSplash extends ProjectileItem {
 
     @PowerNukkitOnly
-    @Since("FUTURE")
+    @Since("1.6.0.0-PN")
     public ItemPotionSplash() {
         this(0, 1);
     }
@@ -63,6 +64,6 @@ public class ItemPotionSplash extends ProjectileItem {
 
     @Override
     protected void correctNBT(CompoundTag nbt) {
-        nbt.putInt("PotionId", this.meta);
+        nbt.putInt(EntityPotion.NBT_POTION_ID, this.meta);
     }
 }
